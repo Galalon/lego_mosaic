@@ -1,4 +1,4 @@
-# LEGO Mosaic Generator 🧩
+# LEGO Mosaic Generator
 
 A Python-based pipeline that transforms any image into a LEGO-style mosaic using color quantization, dithering, and tile placement logic.
 
@@ -70,6 +70,13 @@ python run_main.py \
 | `--use_isolated`        | Enables isolated tile placement step             |
 | `--dither_args`         | JSON string of extra dithering method parameters |
 
+## Returns
+
+| Output                   | Description                                                                 |
+|--------------------------|-----------------------------------------------------------------------------|
+| **Mosaic Image**         | Final LEGO-style mosaic saved to the specified output path (e.g., PNG).     |
+| **Tile Count**           | Text file with number of tiles requied for the mosaic (e.g., ((1, 2), 'Black'): 2).   
+
 Example
 
 ```bash
@@ -83,6 +90,7 @@ python run_main.py \
   --render_scale 10
 ```
 
+The output is an image 
 ## Advanced Usage 
 ### Adding a New Color Palette
 

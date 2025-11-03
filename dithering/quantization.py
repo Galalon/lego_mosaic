@@ -27,7 +27,7 @@ def quantize_image(img_rgb, palette_rgb, weights=None):
     weights = np.asarray(weights if weights is not None else [1.0, 1.0, 1.0], dtype=np.float32)
 
     diff = (img_flat[:, None, :] - palette_rgb[None, :, :]) * weights
-    distances = np.linalg.norm(diff, axis=2)
+    distances = np.sum(np.abs(diff), axis=2)
     closest_indices = np.argmin(distances, axis=1)
     quantized_flat = palette_rgb[closest_indices]
 

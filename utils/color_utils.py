@@ -10,7 +10,10 @@ def clamp_img(img, color_space):
         img[..., 1:] = np.clip(img[..., 1:], 0, 255)
         return img
     elif color_space == 'LAB':
-        return np.clip(img, 0, 255)
+        img[..., 0] = np.clip(img[..., 0], 0, 255)
+        img[..., 1:] = np.clip(img[..., 1:], -128, 127)
+
+        return img
     else:
         raise ValueError(f"Unsupported color space {color_space}")
 

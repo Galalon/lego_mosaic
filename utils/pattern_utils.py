@@ -87,7 +87,7 @@ def create_bayer_matrix(level):
 
     B = recursive_bayer(level)
     B = B.astype(np.float32)
-    B = (B / B.max()) * 2 - 1  # Normalize to [-1, 1]
+    # B = (B / B.max()) * 2 - 1  # Normalize to [-1, 1]
     return B
 
 
